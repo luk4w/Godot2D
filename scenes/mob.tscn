@@ -50,6 +50,7 @@ height = 100.0
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource("1_vmr8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -62,3 +63,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_u7x3g")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+metadata/_edit_group_ = true
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
